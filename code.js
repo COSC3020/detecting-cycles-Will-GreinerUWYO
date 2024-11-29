@@ -33,7 +33,9 @@ function searchforCycle(graph, node, visited){
         }
         else{
             // searches for cycles related to the current node by checking their connected nodes against the current iteration of visited
-            searchforCycle(graph, adjNode,visited);
+            if(searchforCycle(graph, adjNode,visited)){
+                return true;
+            }
         }
     }
     return false;
