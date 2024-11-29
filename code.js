@@ -4,12 +4,12 @@ function hasCycle(graph) {
     }
     // keeps an array with a value for each node, set to false, changed when the node is checked.
     let visited = [];
-    visited = visitedReset(visited);
+    visited = visitedReset(visited, graph);
 
     // looks for a cycle for every starting node, since each has a different path
     for(let startNode = 0; startNode < graph.length; startNode++){
         // resets visited
-        visited = visitedReset(visited);
+        visited = visitedReset(visited, graph);
         // sets the first node to search for true.
         visited[startNode] = true;
         // if a cycle is found, return true
@@ -22,7 +22,7 @@ function hasCycle(graph) {
 }
 
 // looks for cycles given the visited array and a node
-function searchforCycle(graph, node,visited){
+function searchforCycle(graph, node, visited){
     // marks current node as visisted now
     visited[node] = true;
     // checks each node connected to the current node
@@ -40,7 +40,7 @@ function searchforCycle(graph, node,visited){
 }
 
 // resets my visited array to all falses.
-function visitedReset(visited) {
+function visitedReset(visited, graph) {
     for(let i = 0; i < graph.length; i++){
         visited[i] = false;
     }
