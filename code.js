@@ -23,6 +23,8 @@ function hasCycle(graph) {
 
 // looks for cycles given the visited array and a node
 function searchforCycle(graph, node,visited){
+    // marks current node as visisted now
+    visited[node] = true;
     // checks each node connected to the current node
     for(let adjNode of graph[node]) {
         // if the node has been already visited, there is a cycle 
@@ -30,12 +32,8 @@ function searchforCycle(graph, node,visited){
             return true;
         }
         else{
-            // marks each node as visited, this is true for this recursive call all the way down
-            visited[adjNode] = true;
             // searches for cycles related to the current node by checking their connected nodes against the current iteration of visited
             searchforCycle(graph, adjNode,visited);
-            // resets visited after the recusive call is used
-            visited[adjNode] = false;
         }
     }
     return false;
