@@ -1,9 +1,14 @@
 function hasCycle(graph) {
+    console.log(graph.length);
     if(graph.length === 0) {
         return false;
     }
     // keeps an array with a value for each node, set to false, changed when the node is checked.
     let visited = [];
+    for (let i = 0; i < graph.length; i ++) {
+        visited.push(false);
+    }
+
     visited = visitedReset(visited, graph);
 
     // looks for a cycle for every starting node, since each has a different path
@@ -46,4 +51,5 @@ function visitedReset(visited, graph) {
     for(let i = 0; i < graph.length; i++){
         visited[i] = false;
     }
+    return visited;
 }
