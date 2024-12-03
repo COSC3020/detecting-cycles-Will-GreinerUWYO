@@ -1,5 +1,5 @@
 function hasCycle(graph) {
-    console.log(graph.length);
+    // empty graph cannot have cycles
     if(graph.length === 0) {
         return false;
     }
@@ -9,6 +9,7 @@ function hasCycle(graph) {
         visited.push(false);
     }
 
+    // resets the visited to ensure correct values.
     visited = visitedReset(visited, graph);
 
     // looks for a cycle for every starting node, since each has a different path
