@@ -34,6 +34,7 @@ let graphWithCycle2 = [
     
 
 //these test cases below follow the format that Caden wrote 
+console.log("checking A");
 if (!hasCycle(A)) throw new Error('Failed to detect cycle in A');
 if (!hasCycle(star)) throw new Error('Failed to detect cycle in star');
 if (!hasCycle(graphWithCycle)) throw new Error('Failed to detect cycle');
@@ -50,19 +51,21 @@ let line = [
     []
 ];
 
-//these two are test codes I wrote
+//these two are test codes I changed from Collins, after finding his did have cycles.
 let graphWithoutCycle = [
-    [1],     
-    [0, 2],  
-    [1],     
+    [2],
+    [],
+    [1],
+    [0], 
 ];
 
 let graphWithoutCycle2 = [
-    [1],        
-    [0, 2, 3],  
-    [1],        
-    [1, 4],     
-    [3],        
+    [5],
+    [],
+    [3],
+    [4],
+    [1],
+    [3], 
 ];
 
 //these test cases below follow the format that Caden wrote 
