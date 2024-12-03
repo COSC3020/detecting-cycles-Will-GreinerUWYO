@@ -51,7 +51,7 @@ let line = [
     []
 ];
 
-//these two are test codes I changed from Collins, after finding his did have cycles.
+//these two are test codes I changed from Lily's, after finding the original test code did have cycles.
 let graphWithoutCycle = [
     [2],
     [],
